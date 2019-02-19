@@ -19,6 +19,12 @@ const router = new VueRouter({
 });
 // default mode: hash than you see in url example.com/#/user
 
+//before each method is executing before any router action! Used to protect some of the routes
+router.beforeEach((to, from, next) => {
+  console.log('global beforeEach');
+  next(); //to allow next actions and routing
+})
+
 Vue.config.productionTip = false
 
 new Vue({
