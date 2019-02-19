@@ -32,3 +32,5 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### There are examples of using vue-router, router-links, nested routes, query params, redirection and understanding of routing modes and parameters.
