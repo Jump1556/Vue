@@ -1,9 +1,28 @@
-import User from './components/user/User.vue';
-import UserStart from './components/user/UserStart.vue';
-import UserDetail from './components/user/UserDetail.vue';
-import UserEdit from './components/user/UserEdit.vue';
 import Home from './components/Home.vue';
 import Header from './components/Header.vue';
+
+//syntax just for webpack to load lazily (not all components on the begining) for bigger application works good
+const User = resolve => {
+  require.ensure(['./components/user/User.vue'], () => {
+    resolve(require('./components/user/User.vue'));
+  }, 'user');  //group argument to group objects together
+};
+
+const UserStart = resolve => {
+  require.ensure(['./components/user/UserStart.vue'], () => {
+    resolve(require('./components/user/UserStart.vue'));
+  }, 'user');
+};
+const UserDetail = resolve => {
+  require.ensure(['./components/user/UserDetail.vue'], () => {
+    resolve(require('./components/user/UserDetail.vue'));
+  }, 'user');
+};
+const UserEdit = resolve => {
+  require.ensure(['./components/user/UserEdit.vue'], () => {
+    resolve(require('./components/user/UserEdit.vue'));
+  }, 'user');
+};
 
 export const routes = [
   //{ path: '', component: Home },
